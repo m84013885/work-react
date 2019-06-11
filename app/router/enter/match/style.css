@@ -1,0 +1,34 @@
+.match{
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding-top: 23px;
+    width: 86px;
+    height: 80px;
+    background-image: url('../../../images/enter/match.png');
+    background-size: 100% 100%;
+}
+.rank{
+    display: flex;
+    align-items: center;
+    margin-left: 7px;
+    color: #117960;
+    letter-spacing: 0;
+    font-size: 10px;
+    font-family: PingFangSC-Semibold;
+}
+.rankContent{
+    font-size: 12px;
+}
+.rankTop{
+    margin-top: 5px;
+
+    composes:rank;
+}
+.gameMatch{
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 86px;
+    height: 80px;
+    background-image: url('../../../images/enter/match1.png');
+    background-size: 100% 100%;
+}

@@ -1,0 +1,45 @@
+.pk{
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 86px;
+    height: 80px;
+    background-image: url('../../../images/enter/pk.png');
+    background-size: 100% 100%;
+}
+.left{
+    padding-top: 3px;
+    padding-right: 40px;
+    width: 100%;
+}
+.headerUrl{
+    margin: 0 auto;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-image: url(https://static.app-remix.com/bobo/images/announcements/main.png);
+    background-size: 100% 100%;
+}
+.score{
+    color: #117960;
+    text-align: center;
+    letter-spacing: 0;
+    font-size: 8px;
+    font-family: PingFangSC-Semibold;
+    line-height: 10px;
+}
+.right{
+    padding-top: 18px;
+    padding-left: 30px;
+    width: 100%;
+}
+.timeBall{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 20px;
+    color: #FFF78E;
+    text-align: center;
+    font-size: 8px;
+    font-family: PingFangSC-Semibold;
+    line-height: 20px;
+}

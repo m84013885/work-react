@@ -1,0 +1,7 @@
+:global #main { 
+  display: none;
+  overflow: hidden;
+  width: 100px!important;
+  height: 244px;
+  transform-origin: 0% 0%; 
+}

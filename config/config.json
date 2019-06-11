@@ -1,0 +1,12 @@
+{
+    "routers": [
+        {
+            "name": "index",
+            "template": "index"
+        },
+        {
+            "name": "enter",
+            "template": "enter"
+        }
+    ]
+}

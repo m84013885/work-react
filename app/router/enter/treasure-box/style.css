@@ -1,0 +1,150 @@
+.wrapperHidden {
+  display: none;
+}
+.wrapper {
+  position: relative;
+  margin-top: 20px;
+  margin-left: 0;
+  width: 80px;
+  height: 80px;
+}
+.ngbg {
+  position: relative;
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+  background-image: url("../../../images/enter/baoxiang222@2x.png");
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.ngbgShake {
+  transform-origin: center center;
+  animation-name: shake;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+
+  composes: ngbg;
+  animation-fill-mode: both;
+}
+
+@keyframes shake{
+  0%, 65%{ 
+    transform:rotate(0deg);
+  }
+  70% {  
+    transform:rotate(11deg);
+  }
+  75% {  
+    transform:rotate(-11deg);
+  }
+  80% {  
+    transform:rotate(11deg);
+  }
+  85% {  
+    transform:rotate(-11deg);
+  }
+  90% {  
+    transform:rotate(11deg);
+  }
+  95% {  
+    transform:rotate(-11deg);
+  }
+  100% {  
+    transform:rotate(0deg);
+  }
+}
+
+
+.ngbgNone {
+  background-image: none;
+
+  composes: ngbg;
+}
+.timerHidden {
+  display: none;
+}
+.timer {
+  position: absolute;
+  top: 64px;
+  left: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 24px;
+  /* line-height: 14px; */
+  border-radius: 16px;
+  background-image: url("../../../images/enter/baoixangdaojishibg@2x.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  color: #fff;
+  /* text-align: center; */
+  white-space: nowrap;
+  letter-spacing: 0;
+  /* background: #D02813;
+  border: 2px solid #F55340; */
+  font-size: 10px;
+}
+.count {
+  position: absolute;
+  top: 6px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background: #F14F61;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0;
+  font-size: 12px;
+  line-height: 19px;
+}
+.countHidden {
+  display: none;
+}
+.prizeBox {
+  margin: 0 auto;
+  width: 86px;
+  height: 32px;
+  background-image: url("../../../images/enter/toast_tip.png");
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: #F14F61;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 25px;
+  opacity: 0;
+  transition: all .1s ease;
+  transform: translateY(30px);
+}
+.canvas {
+  position: absolute;
+  top: -10px;
+  left: -4px;
+  display: block;
+  margin: 0 auto;
+}
+.canvasHidden {
+  display: none;
+}
+.prizeBoxShow {
+  opacity: 1;
+  transform: translateY(0);
+
+  composes: prizeBox;
+}
+.guanzhu{
+ position: absolute;
+ bottom: 0;
+ left: 50%;
+ margin-left: -36px;
+ width:  72px;
+ height: 24px;
+ background-image: url(../../../images/enter/guanzhubinglingqu.png);
+ background-size: 100% 100%;
+}
