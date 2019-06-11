@@ -78,7 +78,7 @@ routers.map((item) => {
   } = item
   const tempSrc = path.resolve(__dirname, `../../app/router/${template}/index.html`)
   const plugin = new HtmlWebpackPlugin({
-    filename: `${template}.html`,
+    filename: `${template}`,
     title: name,
     template: tempSrc,
     inject: true,

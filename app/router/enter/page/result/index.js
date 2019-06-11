@@ -1,7 +1,7 @@
 'use strict'
 import React from 'react'
 import style from './style.css'
-import { View, ScrollView, Circle, Swiper, SwiperItem } from '../../../components/src'
+import { View, ScrollView, Circle, Swiper, SwiperItem } from '../../../../components'
 
 class Result extends React.Component {
   static propTypes = {

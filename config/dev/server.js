@@ -30,5 +30,5 @@ if (proxy) {
 app.use(WebpackHotMiddleware(compiler))
 // Serve the files on port 3000.
 app.listen(3001, function () {
-  childProcess.exec(`open http://${IP}:3001/`)
+  childProcess.exec(`open http://${IP}:3001/index`)
 })

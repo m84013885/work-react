@@ -1,5 +1,5 @@
 'use strict'
-import style from './enter.css'
+import style from './index.css'
 
 import Match from './match'
 import Pk from './pk'
@@ -9,11 +9,11 @@ import TreasureBox from './treasure-box'
 import msgpack from 'msgpack-lite'
 import { Int64BE } from 'int64-buffer'
 
-import { View } from '../../components/src'
-import { sigFuncWebSocket } from '../../utils/sig'
-import mustParam from '../../utils/must'
+import { View } from '../../../components'
+import { sigFuncWebSocket } from '../../../utils/sig'
+import mustParam from '../../../utils/must'
 
-import { toUrl } from '../../utils/goto'
+import { toUrl } from '../../../utils/goto'
 
 const anchor = serverData.anchor
 const guser = serverData.user
@@ -24,7 +24,7 @@ const mc_uid = anchor.mc_uid
 const mc_source = anchor.mc_source
 const router = serverData.router
 
-class Enter extends React.Component {
+class Index extends React.Component {
   state = {
     // 宝箱
     msg41: {
@@ -296,4 +296,4 @@ class Enter extends React.Component {
   }
 }
 
-export default Enter
+export default Index

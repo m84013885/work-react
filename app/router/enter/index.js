@@ -1,7 +1,7 @@
 /* eslint-disable */
 'use strict'
 import '../../utils/resize'
-import Enter from './enter'
+import Page from './page'
 
 if (module.hot) {
   module.hot.accept()
@@ -17,7 +17,7 @@ const scaleToFix = function () {
   $main.style.display = 'block'
 }
 const main = function () {
-  ReactDom.render(<Enter/>, document.getElementById('main'))
+  ReactDom.render(<Page/>, document.getElementById('main'))
 }
 window.onload = function () {
   scaleToFix()

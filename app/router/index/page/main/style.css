@@ -11,7 +11,7 @@
     margin-top: 126rpx;
     width: 584rpx;
     height: 348rpx;
-    background-image: url('../../../images/index/ranking.png');
+    background-image: url('../../../../images/index/ranking.png');
     background-size: 100% 100%;
     pointer-events: none;
 }
@@ -55,22 +55,22 @@
 .liveBtn1{
     width: 300rpx;
     height: 108rpx;
-    background-image: url('../../../images/index/livebtn1.png');
+    background-image: url('../../../../images/index/livebtn1.png');
     background-size: 100% 100%;
 }
 .liveBtn2{
-    background-image: url('../../../images/index/livebtn2.png');
+    background-image: url('../../../../images/index/livebtn2.png');
 
     composes:liveBtn1;
 }
 .userBtn1{
     width: 300rpx;
     height: 108rpx;
-    background-image: url('../../../images/index/userbtn1.png');
+    background-image: url('../../../../images/index/userbtn1.png');
     background-size: 100% 100%;
 }
 .userBtn2{
-    background-image: url('../../../images/index/userbtn2.png');
+    background-image: url('../../../../images/index/userbtn2.png');
 
     composes:userBtn1;
 }
@@ -135,7 +135,7 @@
     margin-left: -44rpx;
     width: 88rpx;
     height: 40rpx;
-    background-image: url(../../../images/index/live.png);
+    background-image: url(../../../../images/index/live.png);
     background-size: 100% 100%;
 }
 .listContent{
@@ -160,11 +160,11 @@
     margin-right: 20rpx;
     width: 112rpx;
     height: 68rpx;
-    background-image: url(../../../images/index/watch.png);
+    background-image: url(../../../../images/index/watch.png);
     background-size: 100% 100%;
 }
 .nowatch{
-    background-image: url(../../../images/index/nowatch.png);
+    background-image: url(../../../../images/index/nowatch.png);
 
     composes:watch;
 }

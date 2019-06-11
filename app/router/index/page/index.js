@@ -1,14 +1,14 @@
 'use strict'
-import style from './enter.css'
+import style from './index.css'
 
-import { App, View } from '../../components/src'
+import { App, View } from '../../../components'
 
 import Main from './main'
 import Banner from './banner'
 import Rule from './rule'
 import RuleMask from './ruleMask'
 
-class Enter extends React.Component {
+class Index extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -41,4 +41,4 @@ class Enter extends React.Component {
   }
 }
 
-export default Enter
+export default Index

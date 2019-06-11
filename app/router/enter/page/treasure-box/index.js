@@ -1,7 +1,7 @@
 import style from './style.css'
 // import AnimationFrame from '../animFrame'
 
-import { View } from '../../../components/src'
+import { View } from '../../../../components'
 // const PRIZE_CSS = [style.prizeBox, style.prizeBoxShow]
 class TreasureBox extends React.Component {
   static propTypes = {

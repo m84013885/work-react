@@ -1,10 +1,10 @@
 'use strict'
 import style from './style.css'
-import { View } from '../../../components/src'
+import { View } from '../../../../components'
 
-import { sigFuncPost } from '../../../utils/sig'
-import mustParam from '../../../utils/must'
-import asyncFetch from '../../../utils/asyncFetch'
+import { sigFuncPost } from '../../../../utils/sig'
+import mustParam from '../../../../utils/must'
+import asyncFetch from '../../../../utils/asyncFetch'
 
 class List extends React.Component {
   static propTypes = {

@@ -1,6 +1,6 @@
 'use strict'
 import style from './style.css'
-import { View, ScrollView, Circle, Swiper, SwiperItem } from '../../../components/src'
+import { View, ScrollView, Circle, Swiper, SwiperItem } from '../../../../components'
 
 class Rule extends React.Component {
   static propTypes = {

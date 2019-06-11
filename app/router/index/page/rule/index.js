@@ -1,13 +1,14 @@
 'use strict'
 import style from './style.css'
-import { View, ScrollView, Circle, Swiper, SwiperItem } from '../../../components/src'
+import { View, ScrollView, Circle, Swiper, SwiperItem } from '../../../../components'
 
-class Banner extends React.Component {
+class Rule extends React.Component {
   static propTypes = {
     // 传入值类型
     // optionalArray: PropTypes.array,
     // optionalBool: PropTypes.bool,
     // optionalFunc: PropTypes.func,
+    handleChangeRule: PropTypes.func
     // optionalNumber: PropTypes.number,
     // optionalObject: PropTypes.object,
     // optionalString: PropTypes.string
@@ -22,10 +23,11 @@ class Banner extends React.Component {
     // 状态码
   }
   render () {
+    const handleChangeRule = this.props.handleChangeRule
     return (
-      <View className={style.banner}></View>
+      <View className={style.rule} tap={handleChangeRule}></View>
     )
   }
 }
 
-export default Banner
+export default Rule

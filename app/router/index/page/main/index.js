@@ -1,10 +1,10 @@
 'use strict'
 import style from './style.css'
-import { View, ScrollView, Circle, Swiper, SwiperItem } from '../../../components/src'
+import { View, ScrollView, Circle, Swiper, SwiperItem } from '../../../../components'
 
 import List from './list'
 
-import { goLive, goIndex } from '../../../utils/goto'
+import { goLive, goIndex } from '../../../../utils/goto'
 
 class Main extends React.Component {
   static propTypes = {
