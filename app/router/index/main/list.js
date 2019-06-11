@@ -2,9 +2,9 @@
 import style from './style.css'
 import { View } from '../../../components/src'
 
-import { sigFuncPost } from '../../../utills/sig'
-import mustParam from '../../../utills/must'
-import asyncFetch from '../../../utills/asyncFetch'
+import { sigFuncPost } from '../../../utils/sig'
+import mustParam from '../../../utils/must'
+import asyncFetch from '../../../utils/asyncFetch'
 
 class List extends React.Component {
   static propTypes = {

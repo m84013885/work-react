@@ -1,8 +1,8 @@
 /* eslint-disable */
 'use strict'
-import '../../utills/resize'
+import '../../utils/resize'
 import Enter from './enter'
-import share from '../../utills/share'
+import share from '../../utils/share'
 
 if (module.hot) {
   module.hot.accept()

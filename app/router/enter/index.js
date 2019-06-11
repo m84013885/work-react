@@ -1,6 +1,6 @@
 /* eslint-disable */
 'use strict'
-import '../../utills/resize'
+import '../../utils/resize'
 import Enter from './enter'
 
 if (module.hot) {

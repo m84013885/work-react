@@ -4,7 +4,7 @@ import { View, ScrollView, Circle, Swiper, SwiperItem } from '../../../component
 
 import List from './list'
 
-import { goLive, goIndex } from '../../../utills/goto'
+import { goLive, goIndex } from '../../../utils/goto'
 
 class Main extends React.Component {
   static propTypes = {

@@ -10,10 +10,10 @@ import msgpack from 'msgpack-lite'
 import { Int64BE } from 'int64-buffer'
 
 import { View } from '../../components/src'
-import { sigFuncWebSocket } from '../../utills/sig'
-import mustParam from '../../utills/must'
+import { sigFuncWebSocket } from '../../utils/sig'
+import mustParam from '../../utils/must'
 
-import { toUrl } from '../../utills/goto'
+import { toUrl } from '../../utils/goto'
 
 const anchor = serverData.anchor
 const guser = serverData.user
