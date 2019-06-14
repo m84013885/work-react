@@ -17,8 +17,8 @@ const webpackConfig = {
   devtool: 'false',
   output: {
     filename: './js/[name].[chunkhash:5].js',
-    // path: path.resolve(__dirname, '../../statics/activity2019/dragonBoatFestival/build'),
-    path: path.resolve(__dirname, '../build'),
+    // path: path.resolve(__dirname, '../../statics/activity2019/dragonBoatFestival/dist'),
+    path: path.resolve(__dirname, '../dist'),
     publicPath: ''
   },
   module: {
