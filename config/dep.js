@@ -63,7 +63,7 @@ const webpackConfig = {
                 name: '[name].[ext]',
                 limit: 8192, // 表示小于50kb的图片转为base64,大于50kb的是路径
                 outputPath:'images', //定义输出的图片文件夹
-                publicPath:'../images'
+                publicPath:'../images',
             }
           },
           {
@@ -77,7 +77,8 @@ const webpackConfig = {
                 require('imagemin-mozjpeg')({}),
                 require('imagemin-optipng')({}),
                 require('imagemin-svgo')({})
-              ]
+              ],
+
             }
           }
         ],
