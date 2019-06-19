@@ -2,43 +2,48 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
-    <meta name="x5-orientation" content="portrait" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="format-detection" content="telephone=no">
-    <title>入口</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+	<meta name="x5-orientation" content="portrait" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no">
+	<title>入口</title>
 </head>
 
 <body>
-    <div id='main'></div>
-    <script>
-        var serverData = {
+	<div id='main'></div>
+	<script>
+		var serverData = {
 			router: "enter",
 			anchor: {
-				mc_uid: '235886758231833477',
+				mc_uid: '216185536837060210',
 				mc_source: '2',
 			},
 			user: {
-				// source_id: '237664743358246405', //237664743358246405 242409624821620738
-				source_id: '237664743358246405',
+				source_id: '249298441327401996',
 				source: '2',
 			},
-			activityURL: 'https://test1.app-remix.com/v1/activity/rmxspringseason2019main?f=live&mc_source=2&mc_uid=9075191364465156',
-			activityFoolURL: '/v1/activity/rmxspringseason2019april',
-			dataURL: 'ws://livetest1.app-remix.com/activityAccessWs',
-			overTime: 1554307200,
-			curTime: 1553843069, // 单位 秒
-			foolBeginTime: 1553828400,
-			foolEndTime: 1554134400,
-			app: '',
+			activityURL: 'https://live.app-remix.com/v1/activity/rmxanniversary2019main?f=live&mc_source=2&mc_uid=216185536837060210&source=2&user_id=249298441327401996&Qbtoken=6743a6db558322f04bb2fd6c56ee147c&app=2&inapp=1',
+			activityCakeURL: 'https://live.app-remix.com/v1/activity/rmxanniversary2019cake?f=live&mc_source=2&mc_uid=216185536837060210&source=2&user_id=249298441327401996&Qbtoken=6743a6db558322f04bb2fd6c56ee147c&app=2&inapp=1', // 集蛋糕
+			activityHongbaoURL: 'https://live.app-remix.com/v1/activity/rmxanniversary2019rain?f=live&mc_source=2&mc_uid=216185536837060210&source=2&user_id=249298441327401996&Qbtoken=6743a6db558322f04bb2fd6c56ee147c&app=2&inapp=1', // 红包雨
+			dataURL: 'wss://activity.app-remix.com/activityAccessWs',
+			overTime: 1561219200,
+			curTime: 1560936110, // 单位 秒
+			app: '2',
 			isAnchor: false,
-			token: '',
+			token: '6743a6db558322f04bb2fd6c56ee147c',
 			source: '2',
-			source_id: '237664743358246405'
-		} 
-    </script>
+			source_id: '249298441327401996',
+			state: 2
+		}
+	</script>
+	<!-- <script src="http://static.app-remix.com/pcliveStatics/vconsole.js"></script>
+	<script>
+	  // init vConsole
+	  var vConsole = new VConsole();
+	  console.log('Hello world');
+	</script> -->
 </body>
 
 </html>

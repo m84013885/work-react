@@ -1,0 +1,183 @@
+.petal{
+    position: absolute;
+    top: -500px;
+    z-index: 1;
+    width: 90px;
+    height: 116px;
+    background-image: url("../../../../images/game/petal2.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transform-origin: 50% 50%;
+    animation: rotating 10s forwards,move 10s forwards;
+    animation-duration:5s;
+}
+.petalN1{
+    animation-name:rotating1,move;
+
+    composes:petal;
+}
+.petalN2{
+    animation-name:rotating2,move;
+
+    composes:petal;
+}
+.petalN3{
+    animation-name:rotating3,move;
+
+    composes:petal;
+}
+.petalN4{
+    animation-name:rotating4,move;
+
+    composes:petal;
+}
+.petalN5{
+    animation-name:rotating5,move;
+
+    composes:petal;
+}
+.petalN6{
+    animation-name:rotating6,move;
+
+    composes:petal;
+}
+.petalN7{
+    animation-name:rotating7,move;
+
+    composes:petal;
+}
+.petalN8{
+    animation-name:rotating8,move;
+
+    composes:petal;
+}
+.petalN9{
+    animation-name:rotating9,move;
+
+    composes:petal;
+}
+.petalN10{
+    animation-name:rotating10,move;
+
+    composes:petal;
+}
+.petalD1{
+    animation-duration:5s;
+}
+.petalD2{
+    animation-duration:5.5s;
+}
+.petalD3{
+    animation-duration:6s;
+}
+.petalD4{
+    animation-duration:6.5s;
+}
+.petalD5{
+    animation-duration:7s;
+}
+.petalD6{
+    animation-duration:7.5s;
+}
+.petalD7{
+    animation-duration:8s;
+}
+.petalD8{
+    animation-duration:8.5s;
+}
+.petalD9{
+    animation-duration:9s;
+}
+.petalD10{
+    animation-duration:9.5s;
+}
+@keyframes rotating1{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(240deg);}
+}
+@keyframes rotating2{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(300deg);}
+}
+@keyframes rotating3{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg);}
+}
+@keyframes rotating4{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(420deg);}
+}
+@keyframes rotating5{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(480deg);}
+}
+@keyframes rotating6{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(540deg);}
+}
+@keyframes rotating7{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(600deg);}
+}
+@keyframes rotating8{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(660deg);}
+}
+@keyframes rotating9{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(720deg);}
+}
+@keyframes rotating10{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(780deg);}
+}
+@keyframes move{
+    from { top: -500px; }
+    to { top: 1000px;}
+}
+
+.cloud{
+    position: absolute;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.cloud1{
+    background-image: url('../../../../images/game/cloud/cloud1.png');
+
+    composes:cloud;
+}
+.cloud2{
+    background-image: url('../../../../images/game/cloud/cloud2.png');
+
+    composes:cloud;
+}
+.cloud3{
+    background-image: url('../../../../images/game/cloud/cloud3.png');
+
+    composes:cloud;
+}
+.cloud4{
+    background-image: url('../../../../images/game/cloud/cloud4.png');
+
+    composes:cloud;
+}
+.cloud5{
+    background-image: url('../../../../images/game/cloud/cloud5.png');
+
+    composes:cloud;
+}
+.cloud6{
+    background-image: url('../../../../images/game/cloud/cloud6.png');
+
+    composes:cloud;
+}
+.cloud7{
+    background-image: url('../../../../images/game/cloud/cloud7.png');
+
+    composes:cloud;
+}
+.cloud8{
+    background-image: url('../../../../images/game/cloud/cloud8.png');
+
+    composes:cloud;
+}

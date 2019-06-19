@@ -32,6 +32,7 @@ function sigSortObj (obj) {
  */
 function sigFuncPost (obj1, obj2) {
   if (!obj1) { return }
+  const salt = 'cc4bf957c3244a6ebb96cd63206f5632'
   const str1 = sigSortObj(obj1).sigString
   const str2 = sigSortObj(obj2).sigString
   const sigString = str2 + '&' + str1 + '&salt=' + salt
@@ -50,6 +51,7 @@ function sigFuncWebSocket (obj1, obj2) {
   if (!obj1) {
     return
   }
+  const salt = 'cc4bf957c3244a6ebb96cd63206f5632'
   const str1 = sigSortObj(obj1).sigString
   const str2 = sigSortObj(obj2).sigString
   const sigString = str1 + str2 + '&salt=' + salt
@@ -66,6 +68,8 @@ function sigFuncWebSocket (obj1, obj2) {
 
 function sigFuncGet (obj1) {
   if (!obj1) { return }
+  const salt = 'cc4bf957c3244a6ebb96cd63206f5632' // 热猫
+  // var salt = 'af8fdcf25f73476296aeb4f3d6c318f3'  //啵啵
   let { sigString, string } = sigSortObj(obj1)
   // console.log(sigString, string)
   sigString = sigString + '&salt=' + salt

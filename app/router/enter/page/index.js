@@ -1,17 +1,17 @@
 'use strict'
 import style from './index.css'
+import React from 'react'
 
-import Match from './match'
-import Pk from './pk'
-import Result from './result'
 import TreasureBox from './treasure-box'
 
 import msgpack from 'msgpack-lite'
 import { Int64BE } from 'int64-buffer'
 
-import { View } from '../../../components'
-import { sigFuncWebSocket } from '../../../utils/sig'
+import { View, Swiper, SwiperItem } from '../../../components'
+
 import mustParam from '../../../utils/must'
+
+import { asyncFetch, sigFunc } from '../../../utils/helper'
 
 import { toUrl } from '../../../utils/goto'
 
@@ -26,6 +26,7 @@ const router = serverData.router
 
 class Index extends React.Component {
   state = {
+    state: serverData.state,
     // 宝箱
     msg41: {
       s: 0, // 宝箱状态
@@ -36,40 +37,14 @@ class Index extends React.Component {
       e: '', // 奖励文案，可能没有此字段
       u: 0 // 用户津贴数
     },
-    game: 0,
+    current: 0,
+    sd: 0,
+    gd: 0,
+    cake: 0,
 
-    mvp: false,
-    topHeaderUrl: 'https://static.app-remix.com/bobo/images/announcements/main.png',
-    topHeaderName: '123435',
-    // 状态码
-    pkStatus: 0, // 1显示匹配中,2pk中,3结果
-
-    rank: '12',
-    rankScore: 1000,
-
-    result: 1, // 1 胜利，2 失败，3平局
-
-    pk: {
-      status: 101,
-
-      pkTime: 1000, // 本轮pk倒计时
-      bufferTime: 100000, // buffer加成倒计时
-
-      giftName: '荧光棒', // 礼物名
-      giftCountTotal: 100, // 礼物总个数
-      giftCount1: 0, // 收到的礼物个数
-      giftCount2: 0,
-
-      bufferResult: 0, // buffer结果,1成功,2失败
-
-      myName: '123',
-      myPoint: '123',
-      myHeadurl: 'https://avatar.app-remix.com/Z5AHMYVYVRP72DIO.jpg?imageMogr2/thumbnail/100x100/auto-orient',
-      opName: '123',
-      opPoint: '123',
-      opHeadurl: 'https://avatar.app-remix.com/Z5AHMYVYVRP72DIO.jpg?imageMogr2/thumbnail/100x100/auto-orient'
-    }
-
+    // 第二阶段默认状态码
+    s: 0, rs: 0, t: 0, cn: 0, i: 0, o: 0, p: 0, c: 0, nn: 0,
+    tt: 0 // 倒计时用的毫秒
   }
   componentDidMount () {
     this.initWsParam()
@@ -81,8 +56,8 @@ class Index extends React.Component {
     paramer.mc_source = mc_source
     paramer.source_id = source_id
     paramer.router = router
-    const sigObj = sigFuncWebSocket(paramer)
-    const url = `${dataURL}?sig=${sigObj.sig}&${sigObj.str}`
+    const sigObj1 = sigFunc(paramer)
+    const url = `${dataURL}?${sigObj1}`
     this.wsURL = url
     this.linkWs()
   }
@@ -111,7 +86,7 @@ class Index extends React.Component {
     ws.onopen = () => {
       // 发送心跳包
       this.reTimes = 0
-      window.console.log('连接成功')
+      // window.console.log('连接成功')
       this.error = null
       heartbeat = setInterval(() => {
         const ts = new Date().getTime()
@@ -160,105 +135,82 @@ class Index extends React.Component {
   }
   linkMess (data) {
     const { m, p } = data
-    if (p === 10098 || p === 10099) {
-      this.handleEnterMessage(m)
+    if (p >= 10103 && p <= 10110) {
+      if (p === 10108) {
+        this.setState({
+          state: 1
+        })
+      }
+      else if (p === 10110) {
+        this.setState({
+          state: 2
+        })
+      }
     }
-    else if (p === 10100 || p === 10101) {
-      // pk消息
+    if (p === 10108) {
+      this.handleEnterMessage1(m)
+    }
+    else if (p === 10103 || p === 10104) {
+      this.handleEnterMessage2(m)
+    }
+    else if (p === 10109 || p === 10110) {
+      this.handleEnterMessage3(m)
+    }
+    else if (p === 10105 || p === 10106) {
+      // 宝箱消息
       this.boxId = m.d.toString()
-
       const nextState = {
         msg41: m
       }
       this.setState(nextState)
     }
   }
-  handleEnterMessage (m) {
-    if (m.tr && m.ta) {
-      this.setState({
-        trank: m.tr,
-        score: m.ta
-      })
-      if (m.ge) {
-        this.setState({
-          game: m.ge
-        })
-      }
-      else if (m.gv) {
-        this.setState({
-          game: m.gv
-        })
-      }
-      else {
-        this.setState({
-          game: 0
-        })
-      }
-    }
-    console.log(m)
-    const nextState = {}
-    if (m.a === 0 || m.a === 2) { // 显示匹配中
-      nextState.pkStatus = 1
-      nextState.rank = m.k // 排名
-      nextState.rankScore = m.c // 排位分
-    }
-    else if (m.a === 1 && m.es === 111) { // 显示结果
-      if (m.et > 3000) {
-        setTimeout(() => {
-          this.setState({
-            mvp: true
-          })
-        }, m.et - 3000)
-      }
-      else if (m.et > 0) {
-        this.setState({
-          mvp: true
-        })
-      }
-      nextState.topHeaderUrl = m.ph
-      nextState.topHeaderName = m.pn
-
-      nextState.pkStatus = 3
-      nextState.result = m.g || 0 // 1 胜利，2 失败，3平局
-    }
-    else if (m.a === 3 && (m.es >= 102 && m.es <= 111)) { // pk,ko,task,buffer
-      nextState.pkStatus = 2
-      nextState.pk = this.state.pk
-      nextState.pk.status = m.es
-      nextState.pk.pkTime = m.t // 本轮pk倒计时
-      nextState.pk.bufferTime = m.et // buffer加成倒计时
-      nextState.pk.giftName = m.tg // 礼物名
-      nextState.pk.giftCountTotal = m.tl || 0 // 礼物总个数
-      nextState.pk.giftCount1 = m.tc || 0 // 收到的礼物个数
-      nextState.pk.bufferResult = m.tr || 0 // buffer结果
-      nextState.pk.myName = m.n1
-      nextState.pk.myPoint = m.p1 || 0
-      nextState.pk.myHeadurl = m.h1 || ''
-      nextState.pk.opName = m.n2
-      nextState.pk.opPoint = m.p2 || 0
-      nextState.pk.opHeadurl = m.h2 || ''
-      nextState.pk.giftCount2 = m.to || 0
-    }
-    else {
-      nextState.pkStatus = 1
-      nextState.rank = m.k // 排名
-      nextState.rankScore = m.c // 排位分
-    }
-    this.setState(nextState)
+  handleEnterMessage1 (m) {
+    // 第一阶段
+    let { sd, gd } = m
+    !sd ? sd = 0 : ''
+    !gd ? gd = 0 : ''
+    this.setState({
+      sd: sd,
+      gd: gd
+    })
   }
-  _renderPkStatus () {
-    const pkStatus = this.state.pkStatus
-    if (pkStatus === 1) {
-      const { rank, rankScore, game } = this.state
-      return <Match rank={rank} rankScore={rankScore} game={game}/>
+  handleEnterMessage2 (m) {
+    // 蛋糕阶段
+    let { cc } = m
+    !cc ? cc = 0 : ''
+    this.setState({
+      cake: cc
+    })
+  }
+  handleEnterMessage3 (m) {
+    console.log(m)
+    // 红包阶段
+    const s = m.s
+    // 0为默认状态，1为红包雨状态
+    this.setState({ s })
+    if (s === 0) {
+      // p福气总量
+      // nn整点字符串
+      // c整点红包雨次数
+      const { p, nn, c } = m
+      this.setState({
+        p, c, nn
+      })
     }
-    else if (pkStatus === 2) {
-      const { pk } = this.state
-      return <Pk pk={pk}/>
-    }
-    else if (pkStatus === 3) {
-      const { result, pk, mvp, topHeaderUrl, topHeaderName } = this.state
-      return <Result result={result} pk={pk} mvp={mvp} topHeaderUrl={topHeaderUrl} topHeaderName={topHeaderName}/>
+    else if (s === 1) {
+      // rs红包雨阶段状态,0为无红包,1倒计时阶段,2抢红包阶段,3本场结束阶段
+      // o本次整点几次红包雨
+      // t红包雨倒计时
+      // cn整点字符串
+      // i当前第几场红包雨
+      const { rs, t, cn, i, o } = m
+      if (rs === 1) {
+        this._renderTime(t)
+      }
+      this.setState({
+        rs, cn, i, o
+      })
     }
   }
   handleGetPrize = () => {
@@ -269,7 +221,7 @@ class Index extends React.Component {
         'm': {
           'd': Int64BE(this.boxId)
         },
-        'p': 10102,
+        'p': 10107,
         'i': Int64BE(source_id),
         'o': parseInt(source),
         'c': Int64BE(mc_uid),
@@ -280,16 +232,129 @@ class Index extends React.Component {
       this.ws.send(buffer)
     }
   }
+  handleGoToUrl = this.handleGoToUrl.bind(this)
   handleGoToUrl () {
-    toUrl(window.serverData.activityURL)
+    const { current } = this.state
+    const state = this.state.state
+    switch (current) {
+      case 0:
+        if (state === 1) {
+          toUrl(window.serverData.activityURL)
+        }
+        else {
+          toUrl(window.serverData.activityHongbaoURL)
+        }
+        break
+      case 1:
+        toUrl(window.serverData.activityCakeURL)
+        break
+    }
+  }
+  handleSlideChange = this.handleSlideChange.bind(this)
+  handleSlideChange (e) {
+    this.setState({
+      current: e.realIndex
+    })
+  }
+  _renderTime (t) {
+    if (!this.timer) {
+      this.setState({
+        t: parseInt(t / 1000),
+        tt: parseInt(t / 1000)
+      })
+      this.timer = setInterval(() => {
+        if (this.state.tt < 1) {
+          clearInterval(this.timer)
+          this.timer = null
+        }
+        else {
+          this.setState({
+            tt: this.state.tt - 1
+          })
+        }
+      }, 1000)
+    }
+  }
+  _renderHongbao () {
+    const { s, p, nn, c } = this.state
+    if (s === 0) {
+      return (
+        <View>
+          <View className={style.hongbaoTitle}>当前祝福值</View>
+          <View className={style.hongbaoContent}>{(p % 3000000)}</View>
+          <View className={style.hongbaoFooter}><span className={style.hongbaoFooterColor}>{nn}</span>有<span className={style.hongbaoFooterColor}>{c}</span>场红包雨</View>
+        </View>
+      )
+    }
+    else if (s === 1) {
+      const { rs, cn, t, o, tt } = this.state
+      if (rs === 1) {
+        return (
+          <View>
+            <View className={`${style.hongbaoTimeFooter} ${style.hongbaoTimeMargin}`}><span className={style.hongbaoFooterColor}>{cn}</span>天降红包雨</View>
+            <View className={style.progress}>
+              <View className={style.light}></View>
+              <View className={style.progressContent} style={{ width: (tt / t) * 100 + '%' }}></View>
+              <View className={style.progressTime}>倒计时 {tt}s</View>
+            </View>
+          </View>
+        )
+      }
+      else {
+        return (
+          <View>
+            <View className={style.hongbaoTime}>{cn}</View>
+            <View className={style.hongbaoTimeFooter}>将触发<span className={style.hongbaoFooterColor}>{o}</span>场红包雨</View>
+          </View>
+        )
+      }
+    }
+  }
+  _renderSwiper () {
+    const state = this.state.state
+    const { sd, gd, cake, current } = this.state
+    if (state === 2) {
+      return (
+        <View>
+          <Swiper onTap={this.handleGoToUrl} current={current} onSlideChange={this.handleSlideChange} autoplay={true} interval={4000}>
+            <SwiperItem>
+              <View className={style.hongbaoBox}>
+                <View className={style.hongbaoHeader}></View>
+                {this._renderHongbao()}
+              </View>
+            </SwiperItem>
+            <SwiperItem>
+              <View className={style.cakeBg} >
+                <View className={style.cakeText}>当前主播已集</View>
+                <View className={style.cakeContent}><span className={style.contentColor}>{cake}</span> 个</View>
+              </View>
+            </SwiperItem>
+          </Swiper>
+          <View className={style.indicatorBox} style={{ display: state === 2 ? 'block' : 'none' }}>
+            <View className={current === 0 ? style.indicatorActive : style.indicator}></View>
+            <View className={current === 1 ? style.indicatorActive : style.indicator}></View>
+          </View>
+        </View>
+      )
+    }
+    else if (state === 1) {
+      return (
+        <Swiper onTap={this.handleGoToUrl} current={current} onSlideChange={this.handleSlideChange}>
+          <SwiperItem >
+            <View className={style.enterBg} >
+              <View className={style.title}>我的抽奖次数</View>
+              <View className={style.content}><span className={style.contentColor}>{sd}</span> 白银，<span className={style.contentColor}>{gd}</span> 黄金</View>
+            </View>
+          </SwiperItem>
+        </Swiper>
+      )
+    }
   }
   render () {
     const msg41 = this.state.msg41
     return (
       <View className={style.app}>
-        <View tap={this.handleGoToUrl}>
-          {this._renderPkStatus()}
-        </View>
+        {this._renderSwiper()}
         <TreasureBox msg={msg41} onGetPrize={this.handleGetPrize}/>
       </View>
     )

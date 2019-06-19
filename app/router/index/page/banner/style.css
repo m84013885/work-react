@@ -1,9 +1,0 @@
-.banner{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 752rpx;
-    height: 928rpx;
-    background-image: url('../../../../images/index/banner1.png');
-    background-size: 100% 100%;
-}

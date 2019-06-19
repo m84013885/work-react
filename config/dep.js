@@ -17,8 +17,8 @@ const webpackConfig = {
   devtool: 'false',
   output: {
     filename: './js/[name].[chunkhash:5].js',
-    // path: path.resolve(__dirname, '../../statics/activity2019/dragonBoatFestival/dist'),
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, '../../../statics/activity2019/remix618/dist'),
+    // path: path.resolve(__dirname, '../dist'),
     publicPath: ''
   },
   module: {
@@ -63,7 +63,7 @@ const webpackConfig = {
                 name: '[name].[ext]',
                 limit: 8192, // 表示小于50kb的图片转为base64,大于50kb的是路径
                 outputPath:'images', //定义输出的图片文件夹
-                publicPath:'../images',
+                publicPath:'../images'
             }
           },
           {
@@ -77,8 +77,7 @@ const webpackConfig = {
                 require('imagemin-mozjpeg')({}),
                 require('imagemin-optipng')({}),
                 require('imagemin-svgo')({})
-              ],
-
+              ]
             }
           }
         ],
@@ -127,12 +126,17 @@ const webpackConfig = {
   },
   // externals: ["react", "react-dom","mobx","mobx-react"], // string（精确匹配）
   plugins: [
+    new webpack.DefinePlugin({ __DEV__: JSON.stringify(JSON.parse(process.env.NODE_ENV || 'true')) }),
     new CleanWebpackPlugin(),
     // new HtmlWebpackPlugin({}),
-    // new AssetsRelacePlugin([
-    //   path.resolve(__dirname, '../../../remix/templates/activity/activityduanwuday2019Index.html'),
-    //   path.resolve(__dirname, '../../../remix/templates/activity/activityduanwuday2019Enter.html')
-    // ]),
+    new AssetsRelacePlugin([
+      path.resolve(__dirname, '../../../../remix/templates/activity/activitythirdanniversaryIndex.html'),
+      path.resolve(__dirname, '../../../../remix/templates/activity/activitythirdanniversaryEnter.html'),
+      path.resolve(__dirname, '../../../../remix/templates/activity/activitythirdanniversaryGame.html'),
+      path.resolve(__dirname, '../../../../remix/templates/activity/activitythirdanniversaryCake.html'),
+      path.resolve(__dirname, '../../../../remix/templates/activity/activitythirdanniversaryHongbao.html'),
+      path.resolve(__dirname, '../../../../remix/templates/activity/activitythirdanniversaryPopup.html'),
+    ]),
     new webpack.ProvidePlugin({
       React: 'react',
       ReactDom: 'react-dom',

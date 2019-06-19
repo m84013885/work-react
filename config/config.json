@@ -7,6 +7,22 @@
         {
             "name": "enter",
             "template": "enter"
+        },
+        {
+            "name": "game",
+            "template": "game"
+        },
+        {
+            "name": "cake",
+            "template": "cake"
+        },
+        {
+            "name": "hongbao",
+            "template": "hongbao"
+        },
+        {
+            "name": "popup",
+            "template": "popup"
         }
     ]
 }

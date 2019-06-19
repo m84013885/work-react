@@ -1,7 +1,174 @@
+:global body{
+  /* width: 110px!important;
+  height: 250px!important;; */
+}
 :global #main { 
   display: none;
   overflow: hidden;
-  width: 100px!important;
-  height: 244px;
+  width: 110px!important;
+  height: 300px!important;
   transform-origin: 0% 0%; 
+}
+.app{
+  width: 100%;
+  height: 100%;
+}
+.enterBg{
+  display: flex;
+  flex-direction: column;
+  width: 110px;
+  height: 88px;
+  background-image: url('../../../images/enter/rukou@3x.png');
+  background-size: 100% 100%;
+}
+.title{
+  margin-top: 41.5px;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 10px;
+  font-family: PingFang-SC-Medium;
+}
+.content{
+  margin-top: 4px;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 12px;
+  font-family: PingFang-SC-Medium;
+}
+.contentColor{
+  color: #FFE32D;
+  font-family: PingFangSC-Semibold;
+}
+/*  */
+.cakeBg{
+  height: 114px;
+  background-image: url('../../../images/enter/cake1.png');
+
+  composes:enterBg;
+}
+.cakeText{
+  margin-top: 59px;
+
+  composes:title;
+}
+.cakeContent{
+  margin-top: 2px;
+  font-size: 14px;
+
+  composes:content;
+}
+/*  */
+.indicatorBox{
+  margin: 2px 28px;
+  height: 10px;
+}
+.indicator{
+  float: left;
+  margin: 0 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #dddddd;
+}
+.indicatorActive{
+  background-color: aqua;
+
+  composes:indicator;
+}
+/*  */
+.hongbaoBox{
+  position: relative;
+  box-sizing: border-box;
+  margin-top: 17px;
+  padding-top: 28px;
+  width: 110px;
+  height:97px;
+  border: 2px solid #FFFD4C;
+  border-radius: 6px;
+  background-image: linear-gradient(0deg, #CC0B0B 0%, #EE005A 100%);
+}
+.hongbaoHeader{
+  position: absolute;
+  top: -17px;
+  left: 0;
+  width: 110px;
+  height: 45px;
+  background-image: url('../../../images/enter/rukou_font@3x.png');
+  background-size: 100% 100%;
+}
+.hongbaoTitle{
+  margin-top: 6px;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 10px;
+  font-family: PingFang-SC-Medium;
+}
+.hongbaoContent{
+  color: #FFE32D;
+  text-align: center;
+  font-size: 16px;
+  font-family: PingFangSC-Semibold;
+}
+.hongbaoFooter{
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 9px;
+  font-family: PingFangSC-Semibold;
+}
+.hongbaoFooterColor{
+  color: #FFE32D;
+}
+.hongbaoTime{
+  margin-top: 7px;
+  color: #FFE32D;
+  text-align: center;
+  font-size: 14px;
+  font-family: PingFangSC-Semibold;
+}
+.hongbaoTimeFooter{
+  margin-top: 5px;
+  margin-bottom: 15px;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 12px;
+  font-family: PingFang-SC-Medium;
+}
+.hongbaoTimeMargin{
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+.progress{
+  position: relative;
+  overflow: hidden;
+  height: 30px;
+  border-top: 2px solid #FFFD4C;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.light{
+  position: relative;
+  z-index: 1;
+  width: 106px;
+  height: 8px;
+  background-image: url('../../../images/enter/rukou_gaoguang@3x.png');
+  background-size: 100% 100%;
+}
+.progressContent{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgb(253, 179, 75);
+}
+.progressTime{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 106px;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 10px;
+  font-family: PingFangSC-Semibold;
+  line-height: 30px;
 }

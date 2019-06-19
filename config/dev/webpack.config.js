@@ -8,6 +8,7 @@ const webpackConfig = {
   },
   devtool: 'inline-source-map',
   plugins: [
+    new webpack.DefinePlugin({ __DEV__: JSON.stringify(JSON.parse(process.env.NODE_ENV || 'true')) }),
     new webpack.HotModuleReplacementPlugin(),
     // new HtmlWebpackPlugin({
     //     template: path.resolve(__dirname, '../../app/router/index/index.html')

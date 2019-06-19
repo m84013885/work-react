@@ -1,0 +1,126 @@
+/* 
+    z-index层级关系
+    无
+    0 banner,tuoyuan
+    1 guafenbaiwan,guize,showBox
+*/
+:global #main {
+    height: auto!important;
+}
+.app{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(202, 17, 25);
+}
+.banner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 750rpx;
+    height: 674rpx;
+    background-image: url('../../../images/hongbao/head2.png');
+    background-size: 100% 100%;
+}
+.title{
+    margin-top: 536rpx;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28rpx;
+    font-family: PingFang-SC-Medium;
+}
+.titleColor{
+    color: rgb(253, 213, 48);
+}
+.showBox{
+    z-index: 1;
+    margin: 0 auto;
+    margin-top: 8rpx;
+    width: 564rpx;
+    height: 160rpx;
+    background-image: url('../../../images/hongbao/zhufuzhi.png');
+    background-size: 100% 100%;
+}
+.progress{
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 30rpx;
+    width: 452rpx;
+    height: 40rpx;
+    border-radius: 4rpx;
+    background-color: #DD2A2A;
+}
+.light{
+    position: relative;
+    z-index: 1;
+    width: 452rpx;
+    height: 20rpx;
+    background-image: url('../../../images/hongbao/light@3x.png');
+    background-size: 100% 100%;
+}
+.progressContent{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #FFE32C;
+}
+.number{
+    margin-top: 8rpx;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 24rpx;
+    font-family: PingFang-SC-Medium;
+}
+.numberColor{
+    color: rgb(253, 209, 47);
+}
+.guafenbaiwan{
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    margin-top: 60rpx;
+    width: 680rpx;
+    height: 1176rpx;
+    background-image: url('../../../images/hongbao/cont_guafenbaiwan@3x.png');
+    background-size: 100% 100%;
+}
+.guize{
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    margin-top: 40rpx;
+    margin-bottom: 60rpx;
+    width: 680rpx;
+    height: 412rpx;
+    background-image: url('../../../images/hongbao/cont_guize.png');
+    background-size: 100% 100%;
+}
+.tuoyuan1{
+    position: absolute;
+    top: 708rpx;
+    left: 0;
+    width: 110rpx;
+    height: 244rpx;
+    background-image: url('../../../images/hongbao/tuoyuan11.png');
+    background-size: 100% 100%;
+}
+.tuoyuan2{
+    position: absolute;
+    top: 1190rpx;
+    right: 0;
+    width: 148rpx;
+    height: 280rpx;
+    background-image: url('../../../images/hongbao/tuoyuan12.png');
+    background-size: 100% 100%;
+}
+.tuoyuan3{
+    position: absolute;
+    top: 1914rpx;
+    left: 0;
+    width: 152rpx;
+    height: 282rpx;
+    background-image: url('../../../images/hongbao/tuoyuan13.png');
+    background-size: 100% 100%;
+}

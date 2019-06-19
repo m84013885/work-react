@@ -3,38 +3,48 @@ import style from './index.css'
 
 import { App, View } from '../../../components'
 
-import Main from './main'
-import Banner from './banner'
-import Rule from './rule'
-import RuleMask from './ruleMask'
+import { goCharge } from '../../../utils/goto'
 
 class Index extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      rule: false
-    }
+  state = {
+
   }
   componentDidMount () {
 
   }
-  handleChangeRule = this.handleChangeRule.bind(this)
-  handleChangeRule () {
-    this.setState({
-      rule: !this.state.rule
-    })
+  handleGoCharge () {
+    if (window.serverData.isAnchor) {
+      return
+    }
+    if (!window.serverData.inapp_info) {
+      window.location.href = window.serverData.download
+      return
+    }
+    goCharge()
   }
   render () {
-    const rule = this.state.rule
+    const { gold, silver } = serverData
     return (
       <App noSysScroll={false}>
         <View className={style.app}>
-          <Banner/>
-          <Rule handleChangeRule={this.handleChangeRule}/>
-          <RuleMask handleChangeRule={this.handleChangeRule} rule={rule}/>
-          <Main/>
-          <View className={style.footer1}>活动与苹果公司无关</View>
-          <View className={style.footer2}>活动最终解释权归本直播平台所有</View>
+          <View className={style.banner}></View>
+          <View className={style.choujiang}>
+            <View className={style.choujiangText}>
+            你的抽奖机会  <span className={style.choujiangTextColor}>{silver}</span> 白银，<span className={style.choujiangTextColor}>{gold}</span> 黄金
+            </View>
+          </View>
+          <View className={style.btnBg} tap={this.handleGoCharge}>
+            <View className={style.btn}>
+              <View className={style.btnText}>立即获得</View>
+              <View className={style.btnText}>抽奖机会</View>
+            </View>
+          </View>
+          <View className={style.kuanghuanpa}></View>
+          <View className={style.yinghaoche}></View>
+          <View className={style.guize}></View>
+          <View className={style.tuoyuan1}></View>
+          <View className={style.tuoyuan2}></View>
+          <View className={style.tuoyuan3}></View>
         </View>
       </App>
     )

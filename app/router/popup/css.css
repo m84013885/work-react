@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-family: sans-serif;
+
+  user-select: none;
+}
+
+html,
+body {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:global(#main) {
+  overflow: hidden;
+  width: 200px;
+  height: 247px;
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+}
+
+:global(.container) {
+  width: 100%;
+  height: 100%;
+}
+
+:global(.prize) {
+  overflow: hidden;
+}
+
+:global(.prize--fill) {
+  padding-top: 40px;
+  width: 200px;
+  height: 247px;
+  background-image: url("../../images/popup/popup_bg1@2x.png");
+  background-position: center center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+:global(.prize--no) {
+  padding-top: 40px;
+  width: 200px;
+  height: 145px;
+  background-image: url("../../images/popup/popup_bg21@2x.png");
+  background-position: center center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+:global(.prize__pig) {
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  background-position: center center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+:global(.prize__pig--gold) {
+  background-image: url("../../images/popup/gold_pig@3x.png");
+}
+:global(.prize__pig--platinum) {
+  background-image: url("../../images/popup/platinum_pig@3x.png");
+}
+:global(.prize__pig--diamond) {
+  background-image: url("../../images/popup/diamond_pig@3x.png");
+}
+
+/* 钻石 */
+:global(.prize__diamond) {
+  background-image: url("../../images/popup/icon_zuanshi@3x.png");
+}
+/* 免费礼物 */
+:global(.prize__free) {
+  background-image: url("../../images/popup/icon_fudai@3x.png");
+}
+/* 特殊礼物1 */
+:global(.prize__special1) {
+  background-image: url("../../images/popup/special1.png");
+}
+/* 特殊礼物2 */
+:global(.prize__special2) {
+  background-image: url("../../images/popup/special2.png");
+}
+/* 特殊礼物3 */
+:global(.prize__special3) {
+  background-image: url("../../images/popup/special3.png");
+}
+/* 坐骑 */
+:global(.prize__rider) {
+  background-image: url("../../images/popup/icon_wushi@3x.png");
+}
+
+:global(.prize__name) {
+  margin-top: 2px;
+  color: #FFF379;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+:global(.prize__btn) {
+  margin: 0 auto;
+  margin-top: 12px;
+  width: 112px;
+  height: 35px;
+  background-image: url("../../images/popup/btn_confirm@2x.png");
+  background-position: center center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,174 @@
+/* 
+    z-index层级关系
+    无
+    0 绝对定位的banner
+    1 huodongzenmewan
+*/
+:global #main {
+    height: auto!important;
+}
+.app{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(252, 60, 250);
+}
+.banner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 750rpx;
+    height: 630rpx;
+    background-image: url('../../../images/cake/head3.png');
+    background-size: 100% 100%;
+}
+.zhubo{
+    z-index: 1;
+    display: flex;
+    align-content: center;
+    margin: 0 auto;
+    margin-top: 526rpx;
+    width: 680rpx;
+    height: 312rpx;
+    background-image: url('../../../images/cake/zhubo.png');
+    background-size: 100% 100%;
+}
+.huodongzenmewan{
+    z-index: 1;
+    margin: 0 auto;
+    margin-top: 526rpx;
+    width: 680rpx;
+    height: 1088rpx;
+    background-image: url('../../../images/cake/huodongzenmewan.png');
+    background-size: 100% 100%;
+}
+.huodongzenmewan1{
+    margin-top: 40rpx;
+
+    composes:huodongzenmewan;
+}
+.jianglishuoming{
+    margin: 0 auto;
+    margin-top: 40rpx;
+    width: 680rpx;
+    height: 292rpx;
+    background-image: url('../../../images/cake/jianglishuoming@3x.png');
+    background-size: 100% 100%;
+}
+.footer1{
+    margin-top: 40rpx;
+    color: #FFC9F2;
+    text-align: center;
+    letter-spacing: 0.1px;
+    font-size: 12px;
+    font-family: PingFang-SC-Medium;
+    line-height: 18px;
+}
+.footer2{
+    margin-bottom: 40rpx;
+    color: #FFC9F2;
+    text-align: center;
+    letter-spacing: 0.1px;
+    font-size: 12px;
+    font-family: PingFang-SC-Medium;
+    line-height: 18px;
+}
+.zhuboMess{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 252rpx;
+    height: 300rpx;
+}
+.zhuboUrl{
+    width: 120rpx;
+    height: 120rpx;
+    border: 4rpx solid #FF31CF;
+    border-radius: 50%;
+    background-size: 100% 100%;
+}
+.zhuboName{
+    margin-top: 8rpx;
+    color: #EE3B79;
+    text-align: center;
+    letter-spacing: 0;
+    font-size: 20rpx;
+    font-family: PingFang-SC-Medium;
+}
+.zhuboList{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 34rpx;
+    width: 356rpx;
+    height: 232rpx;
+}
+.zhuboListFlex{
+    display: flex;
+    justify-content: space-between;
+}
+.zhuboGift{
+    width: 108rpx;
+    height: 108rpx;
+    background-size: 100% 100%;
+}
+.zhuboGiftt1{
+    background-image: url(../../../images/cake/gift/tt1.png);
+
+    composes:zhuboGift;
+}
+.zhuboGiftt2{
+    background-image: url(../../../images/cake/gift/tt2.png);
+
+    composes:zhuboGift;
+}
+.zhuboGifth1{
+    background-image: url(../../../images/cake/gift/hh1.png);
+
+    composes:zhuboGift;
+}
+.zhuboGifth2{
+    background-image: url(../../../images/cake/gift/hh2.png);
+
+    composes:zhuboGift;
+}
+.zhuboGiftm1{
+    background-image: url(../../../images/cake/gift/mm1.png);
+
+    composes:zhuboGift;
+}
+.zhuboGiftm2{
+    background-image: url(../../../images/cake/gift/mm2.png);
+
+    composes:zhuboGift;
+}
+.zhuboGiftq1{
+    background-image: url(../../../images/cake/gift/qq1.png);
+
+    composes:zhuboGift;
+}
+.zhuboGiftq2{
+    background-image: url(../../../images/cake/gift/qq2.png);
+
+    composes:zhuboGift;
+}
+.zhuboGifts1{
+    background-image: url(../../../images/cake/gift/ss1.png);
+
+    composes:zhuboGift;
+}
+.zhuboGifts2{
+    background-image: url(../../../images/cake/gift/ss2.png);
+
+    composes:zhuboGift;
+}
+.zhuboGiftz1{
+    background-image: url(../../../images/cake/gift/zz1.png);
+
+    composes:zhuboGift;
+}
+.zhuboGiftz2{
+    background-image: url(../../../images/cake/gift/zz2.png);
+
+    composes:zhuboGift;
+}

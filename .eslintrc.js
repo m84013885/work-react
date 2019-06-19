@@ -20,7 +20,8 @@ module.exports = {
       "React": false,
       "ReactDOM": false,
       "PropTypes": false,
-      "serverData": false
+      "serverData": false,
+      "Phaser":false
     },
     "rules": {
       "accessor-pairs": 2,

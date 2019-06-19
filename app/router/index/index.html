@@ -8,68 +8,15 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="format-detection" content="telephone=no">
-    <title>端午龙舟竞渡赛</title>
+    <title>充值狂欢趴 抽奖赢豪车</title>
 </head>
 
 <body>
     <div id='main'></div>
     <script>
         var serverData = {
-apiURL: '/v1/activity/halloweendayfollow',
-inapp_info:  true ,
-login_info:  true ,
-download: "http://a.app.qq.com/o/simple.jsp?pkgname=qsbk.app.remix",
-share: {
-pic: 'https://pic.app-remix.com/94c526f193eba7ce7.png',
-title: '端午龙舟赛爆热进行中',
-content: '赛龙舟送钻石！来和可盐可甜的主播小姐姐“粽”情欢乐~ ',
-url: 'rmxduanwuday2019main',
-},
-app: '2',
-isAnchor:  false ,
-token: '5440013f9497baa2970ee61e72855101',
-source: '2',
-source_id: '164405409837257477',
-anchor: {
-mc_uid:'0',
-mc_source:'0',
-},
-user_info: {
-source: '0',
-uid: '0',
-},
-listActor:  [{"uid": "244383162508040119", "rank": 1, "platform_id": "244383162508040119", "source": 2, "live": 1, "num": 63000, "follow": 0, "id": 1, "headurl": "http://avatar.app-remix.com/QUA6P24WHGQS5UXN.jpg?imageMogr2/format/jpg/thumbnail/300x300/auto-orient", "name": "\u5973\u795e\u8303\u4e3690"}, {"uid": "244379093248840635", "rank": 2, "platform_id": "244379093248840635", "source": 2, "live": 1, "num": 40467, "follow": 0, "id": 2, "headurl": "http://avatar.app-remix.com/B4OW0NL00ED8D158.jpg?imageMogr2/format/jpg/thumbnail/300x300/auto-orient", "name": "AB~97"}, {"uid": "235886758231833477", "rank": 3, "platform_id": "235886758231833477", "source": 2, "live": 1, "num": 38894, "follow": 0, "id": 3, "headurl": "http://avatar.app-remix.com/AMPMPUFD6RQCXCZA.jpg?imageMogr2/format/jpg/thumbnail/300x300/auto-orient", "name": "\u5768\u5768\u76f4\u64ad\u95f4"}, {"uid": "244260098361319158", "rank": 4, "platform_id": "244260098361319158", "source": 2, "live": 1, "num": 33140, "follow": 0, "id": 4, "headurl": "http://avatar.app-remix.com/PDU8G4MG8TCDN7OI.jpg?imageMogr2/format/jpg/thumbnail/300x300/auto-orient", "name": "\u7f8e\u4f73\u6570\u5b6689"}, {"uid": "244381139437922729", "rank": 5, "platform_id": "244381139437922729", "source": 2, "live": 1, "num": 30000, "follow": 0, "id": 5, "headurl": "http://avatar.app-remix.com/845TP0EMH044N51K.jpg?imageMogr2/format/jpg/thumbnail/300x300/auto-orient", "name": "\u9ec4\u6e24\u54e5\u4e3693"}, {"uid": "134982776376473329", "rank": 6, "platform_id": "134982776376473329", "source": 2, "live": 1, "num": 11500, "follow": 0, "id": 6, "headurl": "http://avatar.app-remix.com/9A8HBOJ9BMG3E1ER.jpg?imageMogr2/format/jpg/thumbnail/300x300/auto-orient", "name": "\u6d77\u8d3c\u738b\u5267\u573a\u72485"}, {"uid": "244382737868314547", "rank": 7, "platform_id": "244382737868314547", "source": 2, "live": 1, "num": 8999, "follow": 0, "id": 7, "headurl": "http://avatar.app-remix.com/XNQW60JEK2GD16WT.jpg?imageMogr2/format/jpg/thumbnail/300x300/auto-orient", "name": "\u5c0f\u730e\u8c79\u4e3691"}, {"uid": "244379615896841136", "rank": 8, "platform_id": "244379615896841136", "source": 2, "live": 1, "num": 8912, "follow": 0, "id": 8, "headurl": "http://avatar.app-remix.com/NZ3HXGWFQDH4XEUQ.jpg?imageMogr2/format/jpg/thumbnail/300x300/auto-orient", "name": "\u5415\u5c0f\u5e03\u4e3696"}, {"uid": "119899604328546969", "rank": 9, "platform_id": "119899604328546969", "source": 2, "live": 0, "num": 385, "follow": 0, "id": 9, "headurl": "http://avatar.app-remix.com/UK50QPRWCDNGDG47.jpg?imageMogr2/format/jpg/thumbnail/300x300/auto-orient", "name": "\u9694\u58c1\u8dd1\u9a9a\u5438\u732b"}, {"uid": "244380005061170110", "rank": 10, "platform_id": "244380005061170110", "source": 2, "live": 1, "num": 15, "follow": 0, "id": 10, "headurl": "http://avatar.app-remix.com/EYONMGFUTN0I1VR3.jpg?imageMogr2/format/jpg/thumbnail/300x300/auto-orient", "name": "\u8d85\u8d85\u4e3695"}],
-listContribute:  [{"uid": "244378345251315716", "rank": 1, "platform_id": "244378345251315716", "source": 2, "live": 0, "num": 109000, "id": 1, "headurl": "http://avatar.app-remix.com/687AWMBPSI3V9F8U.jpg?imageMogr2/format/jpg/thumbnail/300x300/auto-orient", "name": "\u9648\u8d64\u8d6498"}, {"uid": "119899604328546969", "rank": 2, "platform_id": "119899604328546969", "source": 2, "live": 0, "num": 100870, "id": 2, "headurl": "http://avatar.app-remix.com/UK50QPRWCDNGDG47.jpg?imageMogr2/format/jpg/thumbnail/300x300/auto-orient", "name": "\u9694\u58c1\u8dd1\u9a9a\u5438\u732b"}, {"uid": "115792401577072202", "rank": 3, "platform_id": "115792401577072202", "source": 2, "live": 0, "num": 8461, "id": 3, "headurl": "http://avatar.app-remix.com/ALN0KVBROJDCE72T.jpg?imageMogr2/format/jpg/thumbnail/300x300/auto-orient", "name": "\u6e38\u52a8\u7684\u9c7c."}, {"uid": "16261549", "rank": 4, "platform_id": "104383063733504161", "source": 1, "live": 0, "num": 5860, "id": 4, "headurl": "http://avatar.app-remix.com/b3669c2784b37bf6.jpg?imageMogr2/format/jpg/thumbnail/300x300/auto-orient", "name": "\u81ea\u987e\u81ea\u7684\u7b11\u4e36"}, {"uid": "33862625", "rank": 5, "platform_id": "115764088041085208", "source": 1, "live": 0, "num": 5340, "id": 5, "headurl": "http://avatar.app-remix.com/PKVLASJB82LNYVX3.jpg?imageMogr2/format/jpg/thumbnail/300x300/auto-orient", "name": "\u88ab\u7075\u9b42\u54ac\u4e86\u4e00\u53e3"}, {"uid": "36032766", "rank": 6, "platform_id": "152897579657494855", "source": 1, "live": 0, "num": 300, "id": 6, "headurl": "http://avatar.app-remix.com/e3828d18c4528d2f.jpg?imageMogr2/format/jpg/thumbnail/300x300/auto-orient", "name": "\u82b1\u5f0f\u64b8\u7ba1\u52a8\u6001\u56fe"}, {"uid": "169267235295094878", "rank": 7, "platform_id": "169267235295094878", "source": 2, "live": 0, "num": 250, "id": 7, "headurl": "http://avatar.app-remix.com/SW4DLBJGKSKCFMV2.jpg?imageMogr2/format/jpg/thumbnail/300x300/auto-orient", "name": "\u9694\u58c1\u6e05\u98ce"}]
-}
-        while (serverData.listActor.length<3) {
-            serverData.listActor.push({
-                "uid": "0",
-                "rank": 0,
-                "num": 0,
-                "follow": 0,
-                "id": 1,
-                "name": "",
-                "platform_id": "0",
-                "source": 2,
-                "live": 0,
-                "headurl": "https://avatar.app-remix.com/default.jpg?imageMogr2/format/jpg/thumbnail/300x300/auto-orient",
-                "rk": 0
-            })
-        }
-        while (serverData.listContribute.length<3) {
-            serverData.listContribute.push({
-                "uid": "0",
-                "rank": 0,
-                "num": 0,
-                "follow": 0,
-                "id": 1,
-                "name": "",
-                "platform_id": "0",
-                "source": 2,
-                "live": 0,
-                "headurl": "https://avatar.app-remix.com/default.jpg?imageMogr2/format/jpg/thumbnail/300x300/auto-orient",
-                "rk": 0
-            })
+            silver:100,
+            gold:50
         }
     </script>
 </body>

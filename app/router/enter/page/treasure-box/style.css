@@ -13,7 +13,7 @@
   margin: 0 auto;
   width: 80px;
   height: 80px;
-  background-image: url("../../../../images/enter/baoxiang222@2x.png");
+  background-image: url("../../../../images/enter/baoxiang22222@3x.png");
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -68,7 +68,7 @@
 .timer {
   position: absolute;
   top: 64px;
-  left: 8px;
+  left: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,13 +93,13 @@
   right: 5px;
   width: 20px;
   height: 20px;
-  border: 1px solid #fff;
+  border: 1px solid #FFFD5B;
   border-radius: 50%;
-  background: #F14F61;
-  color: #fff;
+  background: rgb(239, 15, 25);
+  color: #FFFD5B;
   text-align: center;
-  letter-spacing: 0;
   font-size: 12px;
+  font-family: PingFangSC-Semibold;
   line-height: 19px;
 }
 .countHidden {

@@ -10,7 +10,6 @@ html {
   width: 100%;
   height: 100%;
 }
-
 li {
   list-style: none
 }
@@ -22,7 +21,7 @@ li {
 :global #main {
   position: relative;
   width: 100%;
-  /* height: 100%; */
+  height: 100%;
 }
 
 /* APP 组件 */
@@ -32,7 +31,6 @@ li {
   overflow: hidden;
   width: 100%;
   height: 100%;
-  background-color: rgb(59, 191, 188);
   font-size: 32rpx;
 }
 
@@ -45,7 +43,7 @@ li {
 /* View组件 */
 
 .view {
-  position: relative;
+  /* position: relative; */
   box-sizing: border-box;
   /* overflow: hidden; */
 
@@ -438,7 +436,7 @@ li {
 }
 
 .toastShow {
-  transform: translate3d(0, -95rpx, 0);
+  transform: translate3d(0, -150rpx, 0);
 }
 /* 弹窗 */
 @keyframes showIn{

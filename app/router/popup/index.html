@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+	<meta name="x5-orientation" content="portrait" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no">
+	<title>弹窗</title>
+</head>
+
+<body>
+	<div class="container" id="main">
+		<div class="prize">
+			<div class="prize__pig"></div>
+			<div class="prize__name"></div>
+			<div class="prize__btn"></div>
+		</div>
+	</div>
+	<script>
+		var serverData = {
+			prize: 2, // # 0-没有抢到，1-钻石, 2-荧光棒, 其他值-没有抢到
+			count: 1, // 个数 或 天数
+			closeTime: 100000, // 关闭弹窗倒计时,毫秒
+		}
+	</script>
+</body>
+
+</html>
